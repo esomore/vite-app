@@ -1,0 +1,17 @@
+input {
+  padding: 15px;
+  margin: 15px;
+  border: 1 px solid black;
+  border-radius: 5px;
+}
+
+/*button:hover {
+  filter: drop-shadow(0 0 20em #646cffaa);
+}*/
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
