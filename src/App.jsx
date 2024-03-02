@@ -1,14 +1,11 @@
-import { useState } from "react";
 import "./App.css";
-import Register from "./FComponents/Register";
+import { Main } from "./Pages/Main";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="register">
-        <Register />
+      <div className="main">
+        < Main />
       </div>
     </>
   );

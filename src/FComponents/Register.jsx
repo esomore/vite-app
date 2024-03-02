@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Register.css";
-
+import UserProfile from "./UserProfile";
 function Register() {
   // Initialize state variables using useState hook
   const [values, setValues] = useState({
@@ -13,6 +13,7 @@ function Register() {
   });
 
   const [formErrors, setFormErrors] = useState({}); // State to track form errors
+  const [registered, setRegistered] = useState(false); // State to track registration status
 
   // Destructure state variables for easier access
   const { username, password, validpassword, firstname, lastname, email } =
@@ -56,6 +57,16 @@ function Register() {
 
     // Save the updated users array to local storage
     localStorage.setItem("users", JSON.stringify(updatedUsers));
+    // Save the username to sessionStorage
+    sessionStorage.setItem("isLoggedIn", true);
+    sessionStorage.setItem("username", formJson.username);
+
+    // Set registered state to true
+    setRegistered(true);
+  }
+
+  if (registered) {
+    return <UserProfile username={username} />;
   }
 
   return (
